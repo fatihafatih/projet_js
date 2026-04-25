@@ -14,6 +14,8 @@ function App() {
   const [page, setPage] = useState("accueil");
   const [produitSelectionne,setProduitSelectionne]=useState(null);
   const [utilisateur,setUtilisateur]=useState(null);
+  const [historique, setHistorique] = useState([]); 
+
   const {
     panier,
     ajouterAuPanier,
@@ -90,7 +92,11 @@ case "commande":
  
   />
 );
- default:
+case "historique":
+  if(!utilisateur){setPage("login");return null;}
+  return <OrderHistory historique={historique} setPage={setPage}/>;
+ 
+  default:
   return <Home setPage={setPage}/>
 
  }
