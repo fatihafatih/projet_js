@@ -1,3 +1,4 @@
+// Données simulées (remplace une API backend)
 const produitsData = [
   {
     id: 1,
@@ -44,7 +45,7 @@ const produitsData = [
     nom: "Hoodie Gris Urban",
     prix: 55.00,
     categorie: "Sweats",
-   image: "https://images.unsplash.com/photo-1503341504253-dff4815485f1",
+    image: "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=400",
     description: "Sweat à capuche oversize en molleton doux. Poche kangourou, cordon réglable.",
     tailles: ["S", "M", "L", "XL", "XXL"],
     note: 4.4,
@@ -64,7 +65,7 @@ const produitsData = [
     nom: "Short Cargo Kaki",
     prix: 39.99,
     categorie: "Pantalons",
-    image: "https://www.midifix.com/form/uploads/articles/pics/621076_0_ripstop-cargo-work-short-104727-g72.jpg",
+    image: "https://images.unsplash.com/photo-1591195853828-11db59a44f43?w=400",
     description: "Short cargo multi-poches en coton résistant. Élastique à la taille, ceinture incluse.",
     tailles: ["S", "M", "L", "XL"],
     note: 4.2,
@@ -80,3 +81,39 @@ const produitsData = [
     note: 4.9,
   },
 ];
+
+export function fetchProduits() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(produitsData);
+    }, 800);
+  });
+}
+
+
+export function fetchProduitById(id) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const produit = produitsData.find((p) => p.id === parseInt(id));
+      if (produit) {
+        resolve(produit);
+      } else {
+        reject(new Error("Produit introuvable"));
+      }
+    }, 500);
+  });
+}
+
+export function envoyerCommande(commande) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        success: true,
+        numeroCommande: "CMD-" + Math.floor(Math.random() * 90000 + 10000),
+        message: "Commande confirmée !",
+      });
+    }, 1200);
+  });
+}
+
+export const categories = ["Tous", "T-shirts", "Pantalons", "Vestes", "Robes", "Sweats", "Chemises", "Manteaux"];
