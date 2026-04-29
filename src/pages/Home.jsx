@@ -15,9 +15,6 @@ function Home({setPage}){
                   <span className="btn-tree">👕</span>
                   <p>T-shirts</p>
                 </div>
-
-
-            
                 <div className="btn-two" onClick={()=>setPage("produits")}>
                   <span className="btn-tree">👖</span>
                   <p>Pantalons</p>
@@ -35,8 +32,6 @@ function Home({setPage}){
              <div className="home3">
                 <h2>🎉 Livraison gratuite des 50DH d'achat</h2>
                 <p>Retours gratuits sous 30 jours</p>
-
-
              </div>
         </div>
         </>

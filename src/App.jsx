@@ -61,8 +61,8 @@ function App() {
           <ProductDetail
             produit={produitSelectionne}
             setPage={setPage}
-            utilisateur={setUtilisateur}
-            ajouterAuPanier={ajouterAuPanier}
+            utilisateur={utilisateur}
+           ajouterAuPanier={() => ajouterAuPanier(produitSelectionne)}
           />
         );
       case "panier":

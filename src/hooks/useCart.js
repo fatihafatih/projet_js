@@ -1,6 +1,8 @@
 import { useState } from "react";
 function useCart(){
 const [panier,setPanier]=useState([]);
+
+
 function ajouterAuPanier(produit,taille){
 setPanier((prev)=>{
     //prev c'est le panier actuel
