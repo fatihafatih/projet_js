@@ -1306,3 +1306,152 @@ button {
 .btn-panier:active {
   transform: translateY(0);
 }
+
+/*checkout */
+
+/* ===== CHECKOUT ===== */
+.commande {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.commande h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.btn-retour {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.btn-retour:hover {
+  color: #000;
+}
+
+/* ===== LAYOUT ===== */
+.paiement {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* ===== FORMULAIRE ===== */
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.4rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #000;
+}
+
+.input-row {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.erreur {
+  color: #e53935;
+  font-size: 0.88rem;
+  margin-top: 0.3rem;
+}
+
+/* ===== RESUME ===== */
+.resume {
+  width: 320px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.resume h3 {
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.resume-ligne {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.resume-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  border-top: 1px solid #eee;
+  padding-top: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.85rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: #333;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .paiement {
+    flex-direction: column;
+  }
+
+  .resume {
+    width: 100%;
+    position: static;
+  }
+}

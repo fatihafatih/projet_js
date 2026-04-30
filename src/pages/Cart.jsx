@@ -1,4 +1,4 @@
-  function Cart({panier,setPage,supprimerPanier,modifierQuantite , total}){
+function Cart({panier,setPage,supprimerPanier,modifierQuantite , total}){
 if(panier.length===0){
     return(
         <>
@@ -10,10 +10,7 @@ if(panier.length===0){
         </button>
         </div>
         </>
-
     );
-
-
 }
 return(
     <>

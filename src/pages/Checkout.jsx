@@ -14,7 +14,7 @@ function Checkout({ panier, total, viderPanier, setPage, utilisateur, ajouterCom
   });
   const [envoi, setEnvoi] = useState(false);
   const [confirmation, setConfirmation] = useState(null);
-  const [erreurForm, setErreurForm] = useState(null);
+  const [erreur, setErreur] = useState(null);
 
   // Mettre à jour les champs du formulaire
   function handleChange(e) {
@@ -31,30 +31,30 @@ function Checkout({ panier, total, viderPanier, setPage, utilisateur, ajouterCom
     return true;
   }
 
-  // Soumettre la commande avec async/await
-  async function handleSubmit() {
+async function soumettreCommande() {
     if (!validerForm()) {
-      setErreurForm("⚠️ Veuillez remplir tous les champs.");
+      setErreur("⚠️ Veuillez remplir tous les champs.");
       return;
     }
-    setErreurForm(null);
+ setErreur(null);
 
-    try {
-      setEnvoi(true);
-      const commande = { client: form, articles: panier, total };
-      const resultat = await envoyerCommande(commande);
-      // Sauvegarder la commande dans l'historique
-      ajouterCommande({
-        numeroCommande: resultat.numeroCommande,
-        date: new Date().toLocaleDateString("fr-FR", { day: "2-digit", month: "long", year: "numeric" }),
-        articles: [...panier],
-        total,
-        client: form,
+try {
+  setEnvoi(true);
+    const commande = { client: form, articles: panier, total };
+    const resultat = await envoyerCommande(commande);
+
+ ajouterCommande({
+     numeroCommande: resultat.numeroCommande,
+     date: new Date().toLocaleDateString("fr-FR", { day: "2-digit", month: "long", year: "numeric" }),
+     articles: [...panier],
+     total,
+     client: form,
       });
-      setConfirmation(resultat);
-      viderPanier();
+
+  setConfirmation(resultat);
+  viderPanier();
     } catch (err) {
-      setErreurForm("Erreur lors de la commande. Réessayez.");
+      setErreur("Erreur lors de la commande. Réessayez.");
     } finally {
       setEnvoi(false);
     }
@@ -78,95 +78,56 @@ function Checkout({ panier, total, viderPanier, setPage, utilisateur, ajouterCom
   }
 
   if (envoi) return <Loading message="Traitement de la commande..." />;
+return (
+  <div className="commande">
+    <button className="btn-retour" onClick={() => setPage("panier")}>
+      ← Retour au panier
+    </button>
 
-  return (
-    <div className="checkout-page">
-      <button className="btn-retour" onClick={() => setPage("panier")}>
-        ← Retour au panier
-      </button>
+    <h2>Finaliser la commande</h2>
 
-      <h2>Finaliser la commande</h2>
+    <div className="paiement">
 
-      <div className="checkout-container">
-        {/* Formulaire */}
-        <div className="checkout-form">
-          <h3>Informations de livraison</h3>
-          <input
-            name="nom"
-            type="text"
-            placeholder="Nom complet"
-            value={form.nom}
-            onChange={handleChange}
-            className="form-input"
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            value={form.email}
-            onChange={handleChange}
-            className="form-input"
-          />
-          <input
-            name="adresse"
-            type="text"
-            placeholder="Adresse"
-            value={form.adresse}
-            onChange={handleChange}
-            className="form-input"
-          />
-          <div className="form-row">
-            <input
-              name="ville"
-              type="text"
-              placeholder="Ville"
-              value={form.ville}
-              onChange={handleChange}
-              className="form-input"
-            />
-            <input
-              name="codePostal"
-              type="text"
-              placeholder="Code postal"
-              value={form.codePostal}
-              onChange={handleChange}
-              className="form-input"
-            />
-          </div>
+      {/* Formulaire */}
+      <div className="form">
+        <h3>Informations de livraison</h3>
+        <input name="nom" type="text"  placeholder="Nom complet" value={form.nom}  onChange={handleChange} className="input" />
+        <input name="email" type="email" placeholder="Email" value={form.email}  onChange={handleChange} className="input" />
+        <input name="adresse"type="text" placeholder="Adresse" value={form.adresse} onChange={handleChange} className="input" />
 
-          <h3>Paiement</h3>
-          <input
-            name="carte"
-            type="text"
-            placeholder="Numéro de carte (ex: 1234 5678 9012 3456)"
-            value={form.carte}
-            onChange={handleChange}
-            className="form-input"
-            maxLength={19}
-          />
-
-          {erreurForm && <p className="erreur-form">{erreurForm}</p>}
+        <div className="input-row">
+          <input name="ville" type="text" placeholder="Ville"value={form.ville} onChange={handleChange} className="input" />
+          <input name="codePostal" type="text" placeholder="Code postal"  value={form.codePostal} onChange={handleChange} className="input" />
         </div>
 
-        {/* Résumé */}
-        <div className="checkout-resume">
-          <h3>Votre commande ({panier.length} article(s))</h3>
-          {panier.map((item) => (
-            <div key={`${item.id}-${item.taille}`} className="resume-item">
-              <span>{item.nom} ({item.taille}) x{item.quantite}</span>
-              <span>{(item.prix * item.quantite).toFixed(2)} €</span>
-            </div>
-          ))}
-          <div className="resume-total">
-            <strong>Total : {total.toFixed(2)} €</strong>
-          </div>
-          <button className="btn-primary" onClick={handleSubmit}>
-            Confirmer la commande
-          </button>
-        </div>
+        <h3>Paiement</h3>
+        <input name="carte" type="text" placeholder="1234 5678 9012 3456" value={form.carte} onChange={handleChange} className="input" maxLength={19} />
+
+        {erreur && <p className="erreur">{erreur}</p>}
       </div>
-    </div>
-  );
-}
 
+      
+      <div className="resume">
+        <h3>Votre commande ({panier.length} article{panier.length > 1 ? "s" : ""})</h3>
+
+        {panier.map((item) => (
+          <div key={`${item.id}-${item.taille}`} className="resume-ligne">
+            <span>{item.nom} ({item.taille}) x{item.quantite}</span>
+            <span>{(item.prix * item.quantite).toFixed(2)} DH</span>
+          </div>
+        ))}
+
+        <div className="resume-total">
+          <strong>Total : {total.toFixed(2)} DH</strong>
+        </div>
+
+        <button className="btn-primary" onClick={soumettreCommande}>
+          Confirmer la commande
+        </button>
+      </div>
+
+    </div>
+  </div>
+);
+}
 export default Checkout;

@@ -19,8 +19,6 @@ if( existeDeja){
 }
 return [...prev,{...produit,taille,quantite:1}]
 }
-
-
 );
 
 }
