@@ -42,13 +42,12 @@ return(
         </div>
         ))}
     </div>
-    </div>
-))}
-</div>
+
 <div className="infos-livraison">
     <span>Livraison:{commande.client.adresse},{commande.client.ville}</span>
 </div>
 </div>
-);
-}
+))}
+</div>
+</div>);}
 export default OrderHistory;
