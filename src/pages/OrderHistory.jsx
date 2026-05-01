@@ -18,7 +18,7 @@ return(
     <div key={commande.numeroCommande} className="num-commande">
         <div className="infos-commande">
             <div>
-                <span className="info-numero">{commande.numeroCmmande} </span>
+                <span className="info-numero">{commande.numeroCommande} </span>
            <span className="info-etat">Confirmée</span>
             </div>
             <div className="infos-date-prix">

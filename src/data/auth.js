@@ -53,7 +53,9 @@ export function inscrireUtilisateur(nom, email, motDePasse) {
         avatar: nom.slice(0, 2).toUpperCase(),
       };
       utilisateursData.push({ ...nouvelUtilisateur, motDePasse });
-      resolve(nouvelUtilisateur);
+      /**nouvelUtilisateur → données publiques
+motDePasse → donnée sensible */
+      resolve(nouvelUtilisateur);//return sans mot de passe
     }, 900);
   });
 }
