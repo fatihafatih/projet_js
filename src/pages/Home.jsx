@@ -3,14 +3,14 @@ function Home({setPage}){
     return(
         <>
         <div className="home">
-            <div className="home1">
+            <div className="hero">
                 <h1>Nouvelle Collection 2026</h1>
                 <p>Decouvrez les derniers tendances</p>
-                <button className="btn-one" onClick={()=>setPage("produits")}>
+                <button className="btn-primary" onClick={()=>setPage("produits")}>
                     Voir les produits
                 </button>
            </div>
-            <div className="home2">
+            <div className="categories-grid">
                 <div className="btn-two" onClick={()=>setPage("produits")}>
                   <span className="btn-tree">👕</span>
                   <p>T-shirts</p>

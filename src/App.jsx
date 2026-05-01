@@ -9,19 +9,19 @@ import Login from "./pages/Login";
 import OrderHistory from "./pages/OrderHistory";
 import useCart from "./hooks/useCart";
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   const [page, setPage] = useState("accueil");
   const [produitSelectionne, setProduitSelectionne] = useState(null);
   const [utilisateur, setUtilisateur] = useState(null);
-  const [historique, setHistorique] = useState([]); // toutes les commandes passées
+  const [historique, setHistorique] = useState([]);
 
   const {
     panier, ajouterAuPanier, supprimerDuPanier,
     modifierQuantite, viderPanier, total, nbArticles,
   } = useCart();
 
-  // Appelée par Checkout après confirmation
   function ajouterCommande(commande) {
     setHistorique((prev) => [...prev, commande]);
   }
@@ -106,9 +106,7 @@ function App() {
         deconnecter={deconnecter}
       />
       <main className="main-content">{renderPage()}</main>
-      <footer className="footer">
-        <p>© 2025 StyleShop — Tous droits réservés</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
