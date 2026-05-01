@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -22,15 +22,15 @@ function App() {
     modifierQuantite, viderPanier, total, nbArticles,
   } = useCart();
 
-  function ajouterCommande(commande) {
-    setHistorique((prev) => [...prev, commande]);
-  }
+  // function ajouterCommande(commande) {
+  //   setHistorique((prev) => [...prev, commande]);
+  // }
 
-  function deconnecter() {
-    setUtilisateur(null);
-    viderPanier();
-    setPage("accueil");
-  }
+  // function deconnecter() {
+  //   setUtilisateur(null);
+  //   viderPanier();
+  //   setPage("accueil");
+  // }
 
   // function allerAuPanier() {
   //   if (!utilisateur) {
@@ -41,6 +41,42 @@ function App() {
   // }
   function allerAuPanier() {
   setPage("panier");
+}
+// useEffect(() => {
+//   if (utilisateur?.email) {
+//     const data = localStorage.getItem(`orders-${utilisateur.email}`);
+//     if (data) setHistorique(JSON.parse(data));
+//   }
+// }, [utilisateur]);
+useEffect(() => {
+  async function fetchOrders() {
+    if (utilisateur?.email) {
+      const res = await fetch(
+        `http://localhost:3000/orders?email=${utilisateur.email}`
+      );
+      const data = await res.json();
+      setHistorique(data);
+    }
+  }
+
+  fetchOrders();
+}, [utilisateur]);
+function ajouterCommande(commande) {
+  const newHistorique = [...historique, commande];
+
+  setHistorique(newHistorique);
+
+  if (utilisateur) {
+    localStorage.setItem(
+      `orders-${utilisateur.email}`,
+      JSON.stringify(newHistorique)
+    );
+  }
+}
+function deconnecter() {
+  setUtilisateur(null);
+  viderPanier();
+  setPage("accueil");
 }
 
   function renderPage() {
@@ -80,9 +116,9 @@ function App() {
 
       case "commande":
          if (!utilisateur) {
-    setPage("login");
-    return null;
+    return <Login setUtilisateur={setUtilisateur} setPage={setPage} />;
   }
+
         return (
           <Checkout
             panier={panier}
@@ -95,7 +131,9 @@ function App() {
         );
 
       case "historique":
-        if (!utilisateur) { setPage("login"); return null; }
+  if (!utilisateur) {
+    return <Login setUtilisateur={setUtilisateur} setPage={setPage} />;
+  }
         return <OrderHistory historique={historique} setPage={setPage} />;
 
       default:

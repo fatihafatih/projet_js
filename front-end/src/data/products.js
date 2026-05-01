@@ -1,119 +1,143 @@
-// Données simulées (remplace une API backend)
-const produitsData = [
-  {
-    id: 1,
-    nom: "T-shirt Blanc Classic",
-    prix: 29.99,
-    categorie: "T-shirts",
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
-    description: "Un t-shirt blanc intemporel en coton 100%. Coupe regular fit, idéal pour toutes les occasions.",
-    tailles: ["XS", "S", "M", "L", "XL"],
-    note: 4.5,
-  },
-  {
-    id: 2,
-    nom: "Jean Slim Bleu",
-    prix: 69.99,
-    categorie: "Pantalons",
-    image: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400",
-    description: "Jean slim en denim stretch. Confortable et tendance, parfait pour le quotidien.",
-    tailles: ["36", "38", "40", "42", "44"],
-    note: 4.7,
-  },
-  {
-    id: 3,
-    nom: "Veste en Cuir Noir",
-    prix: 149.99,
-    categorie: "Vestes",
-    image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400",
-    description: "Veste en cuir synthétique style rock. Doublure intérieure, fermeture éclair YKK.",
-    tailles: ["S", "M", "L", "XL"],
-    note: 4.8,
-  },
-  {
-    id: 4,
-    nom: "Robe Fleurie Été",
-    prix: 45.99,
-    categorie: "Robes",
-    image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400",
-    description: "Robe légère à motifs fleuris. Tissu respirant, idéale pour la saison estivale.",
-    tailles: ["XS", "S", "M", "L"],
-    note: 4.6,
-  },
-  {
-    id: 5,
-    nom: "Hoodie Gris Urban",
-    prix: 55.00,
-    categorie: "Sweats",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuQv1wRkUW-rGc2G5BnB4cAhXr0HmY712BuQ&s",
-    description: "Sweat à capuche oversize en molleton doux. Poche kangourou, cordon réglable.",
-    tailles: ["S", "M", "L", "XL", "XXL"],
-    note: 4.4,
-  },
-  {
-    id: 6,
-    nom: "Chemise Oxford Bleue",
-    prix: 49.99,
-    categorie: "Chemises",
-    image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400",
-    description: "Chemise Oxford à carreaux discrets. Col boutonné, manches longues retroussables.",
-    tailles: ["S", "M", "L", "XL"],
-    note: 4.3,
-  },
-  {
-    id: 7,
-    nom: "Short Cargo Kaki",
-    prix: 39.99,
-    categorie: "Pantalons",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQHnXgLVnFps9_FZucZ3D0kZWh3cPD-V0_Yw&s",
-    description: "Short cargo multi-poches en coton résistant. Élastique à la taille, ceinture incluse.",
-    tailles: ["S", "M", "L", "XL"],
-    note: 4.2,
-  },
-  {
-    id: 8,
-    nom: "Manteau Long Camel",
-    prix: 189.99,
-    categorie: "Manteaux",
-    image: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400",
-    description: "Manteau long élégant en laine mélangée. Double boutonnage, col revers.",
-    tailles: ["S", "M", "L", "XL"],
-    note: 4.9,
-  },
-];
+// // Données simulées (remplace une API backend)
+// const produitsData = [
+//   {
+//     id: 1,
+//     nom: "T-shirt Blanc Classic",
+//     prix: 29.99,
+//     categorie: "T-shirts",
+//     image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
+//     description: "Un t-shirt blanc intemporel en coton 100%. Coupe regular fit, idéal pour toutes les occasions.",
+//     tailles: ["XS", "S", "M", "L", "XL"],
+//     note: 4.5,
+//   },
+//   {
+//     id: 2,
+//     nom: "Jean Slim Bleu",
+//     prix: 69.99,
+//     categorie: "Pantalons",
+//     image: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400",
+//     description: "Jean slim en denim stretch. Confortable et tendance, parfait pour le quotidien.",
+//     tailles: ["36", "38", "40", "42", "44"],
+//     note: 4.7,
+//   },
+//   {
+//     id: 3,
+//     nom: "Veste en Cuir Noir",
+//     prix: 149.99,
+//     categorie: "Vestes",
+//     image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400",
+//     description: "Veste en cuir synthétique style rock. Doublure intérieure, fermeture éclair YKK.",
+//     tailles: ["S", "M", "L", "XL"],
+//     note: 4.8,
+//   },
+//   {
+//     id: 4,
+//     nom: "Robe Fleurie Été",
+//     prix: 45.99,
+//     categorie: "Robes",
+//     image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400",
+//     description: "Robe légère à motifs fleuris. Tissu respirant, idéale pour la saison estivale.",
+//     tailles: ["XS", "S", "M", "L"],
+//     note: 4.6,
+//   },
+//   {
+//     id: 5,
+//     nom: "Hoodie Gris Urban",
+//     prix: 55.00,
+//     categorie: "Sweats",
+//     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuQv1wRkUW-rGc2G5BnB4cAhXr0HmY712BuQ&s",
+//     description: "Sweat à capuche oversize en molleton doux. Poche kangourou, cordon réglable.",
+//     tailles: ["S", "M", "L", "XL", "XXL"],
+//     note: 4.4,
+//   },
+//   {
+//     id: 6,
+//     nom: "Chemise Oxford Bleue",
+//     prix: 49.99,
+//     categorie: "Chemises",
+//     image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400",
+//     description: "Chemise Oxford à carreaux discrets. Col boutonné, manches longues retroussables.",
+//     tailles: ["S", "M", "L", "XL"],
+//     note: 4.3,
+//   },
+//   {
+//     id: 7,
+//     nom: "Short Cargo Kaki",
+//     prix: 39.99,
+//     categorie: "Pantalons",
+//     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQHnXgLVnFps9_FZucZ3D0kZWh3cPD-V0_Yw&s",
+//     description: "Short cargo multi-poches en coton résistant. Élastique à la taille, ceinture incluse.",
+//     tailles: ["S", "M", "L", "XL"],
+//     note: 4.2,
+//   },
+//   {
+//     id: 8,
+//     nom: "Manteau Long Camel",
+//     prix: 189.99,
+//     categorie: "Manteaux",
+//     image: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400",
+//     description: "Manteau long élégant en laine mélangée. Double boutonnage, col revers.",
+//     tailles: ["S", "M", "L", "XL"],
+//     note: 4.9,
+//   },
+// ];
 
-export function fetchProduits() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(produitsData);
-    }, 800);
-  });
+// export function fetchProduits() {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(produitsData);
+//     }, 800);
+//   });
+// }
+
+
+// export function fetchProduitById(id) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const produit = produitsData.find((p) => p.id === parseInt(id));
+//       if (produit) {
+//         resolve(produit);
+//       } else {
+//         reject(new Error("Produit introuvable"));
+//       }
+//     }, 500);
+//   });
+// }
+export async function fetchProduits() {
+  const res = await fetch("http://localhost:3000/products");
+  return res.json();
 }
 
+export async function fetchProduitById(id) {
+  const res = await fetch(`http://localhost:3000/products/${id}`);
 
-export function fetchProduitById(id) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const produit = produitsData.find((p) => p.id === parseInt(id));
-      if (produit) {
-        resolve(produit);
-      } else {
-        reject(new Error("Produit introuvable"));
-      }
-    }, 500);
-  });
-}
+  if (!res.ok) {
+    throw new Error("Produit introuvable");
+  }
 
-export function envoyerCommande(commande) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        success: true,
-        numeroCommande: "CMD-" + Math.floor(Math.random() * 90000 + 10000),
-        message: "Commande confirmée !",
-      });
-    }, 1200);
-  });
+  return res.json();
 }
+export async function envoyerCommande(commande) {
+  const res = await fetch("http://localhost:3000/orders", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(commande),
+  });
+
+  return res.json();
+}
+// export function envoyerCommande(commande) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve({
+//         success: true,
+//         numeroCommande: "CMD-" + Math.floor(Math.random() * 90000 + 10000),
+//         message: "Commande confirmée !",
+//       });
+//     }, 1200);
+//   });
+// }
 
 export const categories = ["Tous", "T-shirts", "Pantalons", "Vestes", "Robes", "Sweats", "Chemises", "Manteaux"];
