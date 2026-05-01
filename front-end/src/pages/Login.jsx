@@ -27,7 +27,7 @@ function Login({ setUtilisateur, setPage }) {
         try {
             const user = await loginUtilisateur(email, motDePasse);
             setUtilisateur(user);
-            setPage("accueil");
+            setPage("panier");
         } catch (err) {
             setErreur(err.message);
         } finally {

@@ -353,9 +353,11 @@ button {
   background: #1a1a1a;
   color: white;
   padding: 3px 10px;
+
   border-radius: 20px;
   font-size: 0.75rem;
 }
+
 
 .card-body {
   padding: 14px;

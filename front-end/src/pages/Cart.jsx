@@ -1,4 +1,4 @@
-function Cart({panier,setPage,supprimerPanier,modifierQuantite , total}){
+function Cart({panier,setPage,supprimerPanier,modifierQuantite , total,utilisateur}){
 if(panier.length===0){
     return(
         <>
@@ -66,7 +66,13 @@ return(
                 <span>{(total>=50?total:total+4.99).toFixed(2)}DH</span>
 
             </div>
- <button className="btn1" onClick={()=>setPage("commande")}>
+ <button className="btn1" onClick={() => {
+  if (!utilisateur) {
+    setPage("login");
+  } else {
+    setPage("commande");
+  }
+}}>
                                Passer la commande
                             </button>
     <button className="btn2" onClick={()=>setPage("produits")}>

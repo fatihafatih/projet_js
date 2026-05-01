@@ -32,13 +32,16 @@ function App() {
     setPage("accueil");
   }
 
+  // function allerAuPanier() {
+  //   if (!utilisateur) {
+  //     setPage("login");
+  //   } else {
+  //     setPage("panier");
+  //   }
+  // }
   function allerAuPanier() {
-    if (!utilisateur) {
-      setPage("login");
-    } else {
-      setPage("panier");
-    }
-  }
+  setPage("panier");
+}
 
   function renderPage() {
     switch (page) {
@@ -65,17 +68,21 @@ function App() {
 
       case "panier":
         return (
-          <Cart
-            panier={panier}
-            supprimerDuPanier={supprimerDuPanier}
-            modifierQuantite={modifierQuantite}
-            total={total}
-            setPage={setPage}
-          />
+         <Cart
+  panier={panier}
+  supprimerDuPanier={supprimerDuPanier}
+  modifierQuantite={modifierQuantite}
+  total={total}
+  setPage={setPage}
+  utilisateur={utilisateur}
+/>
         );
 
       case "commande":
-        if (!utilisateur) { setPage("login"); return null; }
+         if (!utilisateur) {
+    setPage("login");
+    return null;
+  }
         return (
           <Checkout
             panier={panier}
@@ -100,7 +107,7 @@ function App() {
     <div className="app">
       <Navbar
         page={page}
-        setPage={(p) => (p === "panier" ? allerAuPanier() : setPage(p))}
+setPage={setPage}
         nbArticles={nbArticles}
         utilisateur={utilisateur}
         deconnecter={deconnecter}

@@ -5,20 +5,18 @@ function ProductDetail({ produit, setPage, utilisateur, ajouterAuPanier }) {
    const [message, setMessage] = useState(null);
  
 if (!produit) return <p>Produit non trouvé</p>;
-  
- function verifier() {
-  if (!utilisateur) {
-    setPage("login");
-  } else {
-    if (!tailleActive) {
-      setErreurTaille(true);
-      return;
-    }
-    setErreurTaille(false);
-    ajouterAuPanier(produit, tailleActive); 
-    setMessage("✅ Ajouté au panier !");
-    setTimeout(() => setMessage(null), 2000);
+  function verifier() {
+  if (!tailleActive) {
+    setErreurTaille(true);
+    return;
   }
+
+  setErreurTaille(false);
+
+  ajouterAuPanier(produit, tailleActive);
+
+  setMessage("✅ Ajouté au panier !");
+  setTimeout(() => setMessage(null), 2000);
 }
 return (
 <div className="pageDetail">
