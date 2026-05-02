@@ -5,6 +5,7 @@ function ProductDetail({ produit, setPage, utilisateur, ajouterAuPanier }) {
    const [message, setMessage] = useState(null);
  
 if (!produit) return <p>Produit non trouvé</p>;
+
   function verifier() {
   if (!tailleActive) {
     setErreurTaille(true);
