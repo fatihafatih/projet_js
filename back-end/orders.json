@@ -1,0 +1,67 @@
+[
+  {
+    "numeroCommande": "CMD-4620",
+    "date": "02/05/2026",
+    "client": {
+      "nom": "fatiha",
+      "email": "fatihaelhamdani789@gmail.com",
+      "adresse": "7 DERB HAMMADI BAB NAOURA, 7 DERB HAMMADI BAB NAOURA",
+      "ville": "MEKNES",
+      "codePostal": "45",
+      "carte": "23456"
+    },
+    "articles": [
+      {
+        "id": 2,
+        "nom": "Jean Slim Bleu",
+        "prix": 69.99,
+        "categorie": "Pantalons",
+        "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400",
+        "description": "Jean slim en denim stretch. Confortable et tendance, parfait pour le quotidien.",
+        "tailles": [
+          "36",
+          "38",
+          "40",
+          "42",
+          "44"
+        ],
+        "note": 4.7,
+        "taille": "42",
+        "quantite": 2
+      }
+    ],
+    "total": 139.98
+  },
+  {
+    "numeroCommande": "CMD-80864",
+    "date": "02/05/2026",
+    "client": {
+      "nom": "fatiha",
+      "email": "fatihaelhamdani789@gmail.com",
+      "adresse": "l,l",
+      "ville": "mml",
+      "codePostal": "-13",
+      "carte": "12345"
+    },
+    "articles": [
+      {
+        "id": 4,
+        "nom": "Robe Fleurie Été",
+        "prix": 45.99,
+        "categorie": "Robes",
+        "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400",
+        "description": "Robe légère à motifs fleuris. Tissu respirant, idéale pour la saison estivale.",
+        "tailles": [
+          "XS",
+          "S",
+          "M",
+          "L"
+        ],
+        "note": 4.6,
+        "taille": "L",
+        "quantite": 1
+      }
+    ],
+    "total": 45.99
+  }
+]
