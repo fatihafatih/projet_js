@@ -134,7 +134,7 @@ function Login({ setUtilisateur, setPage }) {
                         </button>
 
                         <p className="login-hint">
-                            Compte test : <strong>karim@email.com</strong> / <strong>1234</strong>
+                            Compte test : <strong>israe@test.com</strong> / <strong>123</strong>
                         </p>
                     </div>
                 )}

@@ -178,5 +178,88 @@
       }
     ],
     "total": 239.97000000000003
+  },
+  {
+    "numeroCommande": "CMD-80210",
+    "date": "03/05/2026",
+    "client": {
+      "nom": "israe",
+      "email": "israe@test.com",
+      "adresse": "l,l",
+      "ville": "mml",
+      "codePostal": "-13",
+      "carte": "23456"
+    },
+    "articles": [
+      {
+        "id": 6,
+        "nom": "Chemise Oxford Bleue",
+        "prix": 49.99,
+        "categorie": "Chemises",
+        "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400",
+        "description": "Chemise Oxford à carreaux discrets. Col boutonné, manches longues retroussables.",
+        "tailles": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "note": 4.3,
+        "taille": "XL",
+        "quantite": 5
+      },
+      {
+        "id": 6,
+        "nom": "Chemise Oxford Bleue",
+        "prix": 49.99,
+        "categorie": "Chemises",
+        "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400",
+        "description": "Chemise Oxford à carreaux discrets. Col boutonné, manches longues retroussables.",
+        "tailles": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "note": 4.3,
+        "taille": "S",
+        "quantite": 3
+      },
+      {
+        "id": 4,
+        "nom": "Robe Fleurie Été",
+        "prix": 45.99,
+        "categorie": "Robes",
+        "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400",
+        "description": "Robe légère à motifs fleuris. Tissu respirant, idéale pour la saison estivale.",
+        "tailles": [
+          "XS",
+          "S",
+          "M",
+          "L"
+        ],
+        "note": 4.6,
+        "taille": "S",
+        "quantite": 1
+      },
+      {
+        "id": 4,
+        "nom": "Robe Fleurie Été",
+        "prix": 45.99,
+        "categorie": "Robes",
+        "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400",
+        "description": "Robe légère à motifs fleuris. Tissu respirant, idéale pour la saison estivale.",
+        "tailles": [
+          "XS",
+          "S",
+          "M",
+          "L"
+        ],
+        "note": 4.6,
+        "taille": "M",
+        "quantite": 2
+      }
+    ],
+    "total": 537.89
   }
 ]
