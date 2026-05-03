@@ -1403,3 +1403,29 @@ button { cursor: pointer; border: none; font-family: inherit; }
   .details { padding: 28px 24px; }
   .hero { padding: 48px 24px; border-radius: var(--radius-sm); }
 }
+.footer {
+  background-color: var(--green-deep);
+  border-top: 1px solid rgba(184,149,42,0.15);
+  padding: 20px 32px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+}
+
+.footer-text {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.06em;
+}
