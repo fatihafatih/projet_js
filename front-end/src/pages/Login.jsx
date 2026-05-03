@@ -90,7 +90,7 @@ function Login({ setUtilisateur, setPage }) {
     return (
         <div className="login-page">
             <div className="login-card">
-                <div className="login-logo">StyleShop</div>
+                <div className="login-logo">FashionStore</div>
                 {/* Onglets */}
                 <div className="login-tabs">
                     <button

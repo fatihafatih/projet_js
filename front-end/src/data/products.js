@@ -140,7 +140,7 @@ export async function envoyerCommande(commande) {
 //   });
 // }
 
-//export const categories = ["Tous", "T-shirts", "Pantalons", "Vestes", "Robes", "Sweats", "Chemises", "Manteaux"];
+export const categories = ["Tous", "T-shirts", "Pantalons", "Vestes", "Robes", "Sweats", "Chemises", "Manteaux"];
 export async function fetchCategories(){
   const res=await fetch("http://localhost:3000/categories");
   if(!res.ok){

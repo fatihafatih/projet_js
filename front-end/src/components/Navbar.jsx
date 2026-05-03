@@ -11,7 +11,7 @@ function Navbar({ page, setPage, nbArticles, utilisateur, deconnecter }) {
     }
     return (<nav className="navbar">
         <div className="brand" onClick={() => allerVers("accueil")}>
-            👗 FashionStore
+        <img src="../../public/logo_fashion.png" alt="" style={{ height: "80px", width: "60px", objectFit: "contain" }}/>
         </div>
         <div className="links">
             <button
