@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchProduits, categories as categoriesData } from "../data/products";
+import { fetchProduits, fetchCategories } from "../data/products";
 import ProductCard from "../components/ProductCard";
 import Loading from "../components/Loading";
 
@@ -19,13 +19,11 @@ function Products({ setPage, setProduitSelectionne }) {
 
   async function chargerProduits() {
   try{
-      const data = await fetchProduits();
-      setProduits(data);
-    setCategories(categoriesData);
+      const [data,catg] = await Promise.all([fetchProduits(),fetchCategories()]);
+      setProduits(data); 
+      setCategories(catg); 
 
-
-
-    } catch (err) {
+     } catch (err) {
       setErreur("Erreur lors du chargement des produits.");
     } finally {
       setChargement(false);
