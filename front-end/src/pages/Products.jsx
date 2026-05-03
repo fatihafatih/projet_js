@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchProduits ,fetchCategories} from "../data/products";
+import { fetchProduits ,categories} from "../data/products";
 import ProductCard from "../components/ProductCard";
 import Loading from "../components/Loading";
 
@@ -18,14 +18,10 @@ function Products({ setPage, setProduitSelectionne }) {
   }, []);
 
   async function chargerProduits() {
-    try {
-      setChargement(true);
-      const [data,categoriesData]=await Promise.all([fetchProduits(),
-        fetchCategories(),
-      ])
-     /* const data = await fetchProduits();*/
+  try{
+      const data = await fetchProduits();
       setProduits(data);
-      setCategories(categoriesData);
+      setCategories(categories);
 
 
 

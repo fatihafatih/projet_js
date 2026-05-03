@@ -1,16 +1,14 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { PRODUCTS } from './products.data';
-
+import data from '../data/products.json';
 @Injectable()
 export class ProductsService {
 
   findAll() {
-    return PRODUCTS;
+    return data.PRODUCTS;
   }
 
   findOne(id: number) {
-    const product = PRODUCTS.find(p => p.id === id);
-
+const product = data.PRODUCTS.find(p => p.id === Number(id));
     if (!product) {
       throw new NotFoundException("Produit introuvable");
     }

@@ -261,5 +261,38 @@
       }
     ],
     "total": 537.89
+  },
+  {
+    "numeroCommande": "CMD-20485",
+    "date": "03/05/2026",
+    "client": {
+      "nom": "israe",
+      "email": "israe@test.com",
+      "adresse": "7 DERB HAMMADI BAB NAOURA, 7 DERB HAMMADI BAB NAOURA",
+      "ville": "MEKNES",
+      "codePostal": "45",
+      "carte": "987654"
+    },
+    "articles": [
+      {
+        "id": 2,
+        "nom": "Jean Slim Bleu",
+        "prix": 69.99,
+        "categorie": "Pantalons",
+        "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400",
+        "description": "Jean slim en denim stretch. Confortable et tendance, parfait pour le quotidien.",
+        "tailles": [
+          "36",
+          "38",
+          "40",
+          "42",
+          "44"
+        ],
+        "note": 4.7,
+        "taille": "42",
+        "quantite": 1
+      }
+    ],
+    "total": 69.99
   }
 ]

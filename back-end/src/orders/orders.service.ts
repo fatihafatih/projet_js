@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { readFile, writeFile } from 'fs/promises';
+import { join } from 'path';
 
 @Injectable()
 export class OrdersService {
-  private filePath = 'orders.json';
-
+private filePath = join(process.cwd(), 'src', 'data', 'orders.json');
   async create(order: any) {
     const orders = await this.findAll();
 
