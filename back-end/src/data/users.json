@@ -2,39 +2,45 @@
   "users": [
     {
       "id": 1,
-      "username": "Dupont",
+      "nom": "Dupont",
       "email": "jean.dupont@example.com",
-      "password": "password123"
+      "motDePasse": "password123",
+      "avatar": "DU"
     },
     {
       "id": 2,
-      "username": "Martin",
+      "nom": "Martin",
       "email": "sophie.martin@example.com",
-      "password": "azerty456"
+      "motDePasse": "azerty456",
+      "avatar": "MA"
     },
     {
       "id": 3,
-      "username": "El Amrani",
+      "nom": "El Amrani",
       "email": "youssef.elamrani@example.ma",
-      "password": "secure789"
+      "motDePasse": "secure789",
+      "avatar": "EA"
     },
     {
       "id": 4,
-      "username": "Benali",
+      "nom": "Benali",
       "email": "salma.benali@example.ma",
-      "password": "pass2024"
+      "motDePasse": "pass2024",
+      "avatar": "BE"
     },
     {
-      "id": 1,
-      "username": "israe",
+      "id": 5,
+      "nom": "israe",
       "email": "israe@test.com",
-      "password": "123"
+      "motDePasse": "123",
+      "avatar": "IS"
     },
     {
       "id": 6,
-      "username": "siham",
+      "nom": "siham",
       "email": "siham@gmail.com",
-      "password": "123"
+      "motDePasse": "123",
+      "avatar": "SI"
     }
   ]
 }

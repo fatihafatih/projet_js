@@ -8,13 +8,12 @@ function ProductCard({ produit, setPage, setProduitSelectionne }) {
   return (
     <div className="product-card" onClick={ouvrirDetail}>
       <div className="card-img-container">
-        <img src={produit.image} alt={produit.nom} className="card-img" />      </div>
-          <span className="card-categorie">{produit.categorie}</span>
-
+        <img src={produit.image} alt={produit.nom} className="card-img" />
+      </div>
       <div className="card-body">
         <h3 className="card-nom">{produit.nom}</h3>
         <div className="card-footer">
-         <span className="card-prix">{produit.prix.toFixed(2)} Dhs</span>
+          <span className="card-prix">{produit.prix.toFixed(2)} Dhs</span>
           <span className="card-note">⭐ {produit.note}</span>
         </div>
       </div>

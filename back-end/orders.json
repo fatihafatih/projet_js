@@ -63,5 +63,120 @@
       }
     ],
     "total": 45.99
+  },
+  {
+    "numeroCommande": "CMD-86390",
+    "date": "03/05/2026",
+    "client": {
+      "nom": "Ali",
+      "email": "Ali@example.com",
+      "adresse": "hay al boughaz n48 tanger",
+      "ville": "Tanger",
+      "codePostal": "30000",
+      "carte": "345367"
+    },
+    "articles": [
+      {
+        "id": 7,
+        "nom": "Short Cargo Kaki",
+        "prix": 39.99,
+        "categorie": "Pantalons",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQHnXgLVnFps9_FZucZ3D0kZWh3cPD-V0_Yw&s",
+        "description": "Short cargo multi-poches en coton résistant. Élastique à la taille, ceinture incluse.",
+        "tailles": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "note": 4.2,
+        "taille": "M",
+        "quantite": 1
+      },
+      {
+        "id": 4,
+        "nom": "Robe Fleurie Été",
+        "prix": 45.99,
+        "categorie": "Robes",
+        "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400",
+        "description": "Robe légère à motifs fleuris. Tissu respirant, idéale pour la saison estivale.",
+        "tailles": [
+          "XS",
+          "S",
+          "M",
+          "L"
+        ],
+        "note": 4.6,
+        "taille": "L",
+        "quantite": 1
+      }
+    ],
+    "total": 85.98
+  },
+  {
+    "numeroCommande": "CMD-72830",
+    "date": "03/05/2026",
+    "client": {
+      "nom": "siham",
+      "email": "siham@gmail.com",
+      "adresse": "hay al boughaz n48 tanger",
+      "ville": "Tanger",
+      "codePostal": "30000",
+      "carte": "345367"
+    },
+    "articles": [
+      {
+        "id": 3,
+        "nom": "Veste en Cuir Noir",
+        "prix": 149.99,
+        "categorie": "Vestes",
+        "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400",
+        "description": "Veste en cuir synthétique style rock. Doublure intérieure, fermeture éclair YKK.",
+        "tailles": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "note": 4.8,
+        "taille": "L",
+        "quantite": 1
+      },
+      {
+        "id": 6,
+        "nom": "Chemise Oxford Bleue",
+        "prix": 49.99,
+        "categorie": "Chemises",
+        "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400",
+        "description": "Chemise Oxford à carreaux discrets. Col boutonné, manches longues retroussables.",
+        "tailles": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "note": 4.3,
+        "taille": "M",
+        "quantite": 1
+      },
+      {
+        "id": 7,
+        "nom": "Short Cargo Kaki",
+        "prix": 39.99,
+        "categorie": "Pantalons",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQHnXgLVnFps9_FZucZ3D0kZWh3cPD-V0_Yw&s",
+        "description": "Short cargo multi-poches en coton résistant. Élastique à la taille, ceinture incluse.",
+        "tailles": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "note": 4.2,
+        "taille": "L",
+        "quantite": 1
+      }
+    ],
+    "total": 239.97000000000003
   }
 ]

@@ -11,7 +11,7 @@ const utilisateursData = [
     nom: "Sara Idrissi",
     email: "sara@email.com",
     motDePasse: "abcd",
-    avatar: "SI",
+    avatar : "SI",
   },
   {
     id: 3,

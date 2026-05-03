@@ -24,15 +24,29 @@ function Login({ setUtilisateur, setPage }) {
         }
         setErreur(null);
         setChargement(true);
-        try {
-            const user = await loginUtilisateur(email, motDePasse);
-            setUtilisateur(user);
-            setPage("panier");
-        } catch (err) {
-            setErreur(err.message);
-        } finally {
-            setChargement(false);
-        }
+
+        fetch('http://localhost:3000/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email,
+                password: motDePasse
+            })
+        }).then((res) => res.json())
+            .then((data) => {
+                if (data.user) {
+                    setUtilisateur(data.user);
+                    setPage("produits");
+                } else {
+                    setErreur(data.message);
+                }
+            })
+            .catch(err =>
+                setErreur(err.message))
+            .finally(() => setChargement(false))
+
     }
 
     // Inscription avec async/await
@@ -71,7 +85,7 @@ function Login({ setUtilisateur, setPage }) {
         setSucces(null);
     }
 
-    if (chargement) return <Loading message={onglet+" en cours..."} />;
+    if (chargement) return <Loading message={onglet + " en cours..."} />;
 
     return (
         <div className="login-page">
