@@ -1,4 +1,4 @@
-function Cart({panier,setPage,supprimerPanier,modifierQuantite , total,utilisateur}){
+function Cart({panier,setPage,supprimerDuPanier,modifierQuantite , total,utilisateur}){
 if(panier.length===0){
     return(
         <>
@@ -41,7 +41,7 @@ return(
                             </div>
 
                          <button className="btnsupprimer"
-                           onClick={()=>supprimerPanier(item.id,item.taille)}>
+                           onClick={()=>supprimerDuPanier(item.id,item.taille)}>
                                 ✕
                             </button>
               
