@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchProduits ,categories} from "../data/products";
+import { fetchProduits, categories as categoriesData } from "../data/products";
 import ProductCard from "../components/ProductCard";
 import Loading from "../components/Loading";
 
@@ -21,7 +21,7 @@ function Products({ setPage, setProduitSelectionne }) {
   try{
       const data = await fetchProduits();
       setProduits(data);
-      setCategories(categories);
+    setCategories(categoriesData);
 
 
 
