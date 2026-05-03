@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchProduits, categories } from "../data/products";
+import { fetchProduits ,fetchCategories} from "../data/products";
 import ProductCard from "../components/ProductCard";
 import Loading from "../components/Loading";
 
@@ -10,6 +10,7 @@ function Products({ setPage, setProduitSelectionne }) {
   const [erreur, setErreur] = useState(null);
   const [categorieActive, setCategorieActive] = useState("Tous");
   const [recherche, setRecherche] = useState("");
+  const [categories,setCategories]=useState(["Tous"]);
 
   // Charger les produits au montage du composant
   useEffect(() => {
@@ -19,8 +20,15 @@ function Products({ setPage, setProduitSelectionne }) {
   async function chargerProduits() {
     try {
       setChargement(true);
-      const data = await fetchProduits();
+      const [data,categoriesData]=await Promise.all([fetchProduits(),
+        fetchCategories(),
+      ])
+     /* const data = await fetchProduits();*/
       setProduits(data);
+      setCategories(categoriesData);
+
+
+
     } catch (err) {
       setErreur("Erreur lors du chargement des produits.");
     } finally {
