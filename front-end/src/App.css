@@ -762,6 +762,8 @@ button { cursor: pointer; border: none; font-family: inherit; }
   display: flex;
   gap: 4px;
   align-items: center;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-btn {
