@@ -366,7 +366,7 @@ body {
   justify-content: center;
   text-align: center;
   height: 1000px;
-  padding: 80px 20px 120px 20px; 
+  padding: 0px 20px 120px 20px; 
   overflow: hidden;
   margin-top: 0;
   background: linear-gradient(135deg, var(--green-deep) 0%, #1a351a 100%) !important;
@@ -656,8 +656,8 @@ body {
 
 /* Conteneur de l'image (.btn-tree) */
 .btn-tree {
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   margin-bottom: 24px;
   display: flex;
   align-items: center;
@@ -858,8 +858,8 @@ button { cursor: pointer; border: none; font-family: inherit; }
 .main-content {
   flex: 1;
   padding: 0;
-  max-width: none;
-  margin: 0 ;
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
 }
 
