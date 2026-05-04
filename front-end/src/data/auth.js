@@ -1,4 +1,4 @@
-const utilisateursData = [
+/*const utilisateursData = [
   {
     id: 1,
     nom: "Karim Benali",
@@ -54,8 +54,8 @@ export function inscrireUtilisateur(nom, email, motDePasse) {
       };
       utilisateursData.push({ ...nouvelUtilisateur, motDePasse });
       /**nouvelUtilisateur → données publiques
-motDePasse → donnée sensible */
+motDePasse → donnée sensible 
       resolve(nouvelUtilisateur);//return sans mot de passe
     }, 900);
   });
-}
+}*/

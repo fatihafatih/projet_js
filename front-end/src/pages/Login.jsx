@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { loginUtilisateur, inscrireUtilisateur } from "../data/auth";
 import Loading from "../components/Loading";
 
 function Login({ setUtilisateur, setPage }) {
@@ -48,8 +47,6 @@ function Login({ setUtilisateur, setPage }) {
             .finally(() => setChargement(false))
 
     }
-
-    // Inscription avec async/await
     async function handleInscription() {
         if (!nom || !emailInscription || !mdpInscription || !mdpConfirm) {
             setErreur("Veuillez remplir tous les champs.");
@@ -64,19 +61,31 @@ function Login({ setUtilisateur, setPage }) {
             return;
         }
         setErreur(null);
-        try {
-            setChargement(true);
-            const user = await inscrireUtilisateur(nom, emailInscription, mdpInscription);
-            setSucces(`Compte créé ! Bienvenue ${user.nom}`);
+
+            
+        fetch('http://localhost:3000/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username:nom,
+                email:emailInscription,
+                password: mdpInscription
+            })
+        }).then(res => res.json())
+    .then(data => {
+        if (data.message) {
+            setSucces("Compte créé avec succès !");
             setTimeout(() => {
-                setUtilisateur(user);
-                setPage("accueil");
-            }, 5500);
-        } catch (err) {
-            setErreur(err.message);
-        } finally {
-            setChargement(false);
+            setPage("login");
+            }, 2000);
+        } else {
+            setErreur("Erreur lors de l'inscription");
         }
+    })
+    .catch(err => setErreur(err.message))
+    .finally(() => setChargement(false));
     }
 
     function changerOnglet(val) {

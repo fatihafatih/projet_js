@@ -7,20 +7,20 @@ export class AuthService {
     private filePath = path.join(process.cwd(), 'src/data', 'users.json');
     private users: any = [];
 
-    async register(username: string, email: string, password: string): Promise<string> {
+    async register(username: string, email: string, password: string) {
         let data;
         try {
             const file = await readFile(this.filePath, 'utf-8');
             data = JSON.parse(file);
         } catch (error) {
-            return "erreur! " + error;
+        return { message: "Erreur: " + error };
         }
 
         const user = data.users.find(
             (u: any) => u.email === email
         );
         if (user) {
-            return 'email deja utilise! '
+        return { message: 'Email déjà utilisé' };
         }
 
         const newUser = {
@@ -32,7 +32,7 @@ export class AuthService {
         };
         data.users.push(newUser);
         await writeFile(this.filePath, JSON.stringify(data, null, 2));
-        return 'Utilisateur enregistré avec succès';
+       return { message: 'Utilisateur enregistré avec succès' };
     }
 
     async login(email: string, password: string) {

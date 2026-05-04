@@ -1,33 +1,737 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+/* ===== IMPORT DES POLICES ===== */
+/* Utilisation de 'Syne' pour les titres (très trendy/design) et 'Inter' pour le corps */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap');
 
+/* ===== VARIABLES CORE (Palette conservée & enrichie) ===== */
 :root {
-  --gold:        #B8952A;
-  --gold-light:  #D4B96A;
-  --gold-pale:   #F5EDD6;
-  --green-deep:  #0F1F0F;
-  --green-mid:   #1E3A1E;
-  --green-soft:  #2E5430;
-  --cream:       #F8F5EF;
-  --cream-dark:  #EDE8DC;
-  --text-dark:   #0F1F0F;
-  --text-mid:    #3D5040;
-  --text-muted:  #7A9080;
-  --radius:      12px;
-  --radius-sm:   8px;
+  /* Couleurs principales */
+  --gold:         #B8952A;
+  --gold-light:   #D4B96A;
+  --gold-pale:    #F5EDD6;
+  --green-deep:   #0F1F0F; /* Fond sombre principal */
+  --green-mid:    #1A2E1A; /* Pour les cartes sur fond sombre */
+  --cream:        #FBF9F6; /* Fond clair principal plus frais */
+  --white:        #FFFFFF;
+  --green-deep: #0F1F0F; /* La couleur sombre de l'image */
+  --gold: #B8952A;
+
+
+  /* Couleurs de texte */
+  --text-on-light: #0F1F0F;
+  --text-on-dark:  #FBF9F6;
+  --text-muted:    #667566;
+
+  /* Structure & Effets */
+  --radius-lg: 24px; /* Arrondis plus larges et modernes */
+  --radius-md: 16px;
+  --radius-sm: 8px;
   --radius-pill: 999px;
-  --shadow-sm:   0 2px 8px rgba(15,31,15,0.06);
-  --shadow-md:   0 4px 20px rgba(15,31,15,0.10);
+  
+  /* Ombres douces (Soft Shadows) */
+  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.07), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --transition-fast: all 0.2s var(--ease-out);
+  --transition-md: all 0.4s var(--ease-out);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* ===== RESET & BASE ===== */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+/* ===== SECTION À PROPOS ===== */
+.about-section {
+  padding: 100px 20px;
+  background-color: var(--white);
+  overflow: hidden;
+}
 
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* --- Visuel Asymétrique --- */
+.about-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.main-img {
+  width: 80%;
+  height: 500px;
+  transform: translateX(-10%);
+}
+
+.detail-img {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  width: 50%;
+  height: 300px;
+  border: 8px solid var(--white);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-md);
+}
+
+.about-visual:hover .main-img img {
+  transform: scale(1.05);
+}
+
+.experience-badge {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: var(--gold);
+  color: var(--green-deep);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  z-index: 2;
+  box-shadow: var(--shadow-hover);
+}
+
+.experience-badge .years {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.experience-badge .label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* --- Contenu Texte --- */
+.about-content .subtitle {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.about-content .title {
+  font-family: 'Syne', sans-serif;
+  font-size: 48px;
+  line-height: 1.1;
+  color: var(--green-deep);
+  margin-bottom: 25px;
+}
+
+.about-content .title span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.about-content .description {
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.commitments {
+  display: grid;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.commitment-item {
+  display: flex;
+  gap: 20px;
+}
+
+.commitment-item .icon {
+  font-size: 24px;
+}
+
+.commitment-item h4 {
+  font-family: 'Syne', sans-serif;
+  color: var(--green-deep);
+  margin-bottom: 5px;
+}
+
+.commitment-item p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .main-img {
+    width: 100%;
+    transform: none;
+  }
+  
+  .about-content {
+    text-align: center;
+  }
+  
+  .commitment-item {
+    text-align: left;
+    justify-content: center;
+  }
+}
+
+/* Conteneur pour centrer et donner de l'espace */
+/* ===== PROMO BANNER (Modifié pour largeur contenue et centrage) ===== */
+.promo-container {
+  padding: 40px 20px; /* Padding ajusté pour un bel espacement */
+  width: 100%;        /* S'assure de l'alignement sur mobile */
+  
+  /* --- AJOUTS ICI POUR RÉDUIRE ET CENTRER --- */
+  max-width: 1300px;  /* Une largeur moderne et contenue (ajuste selon tes goûts) */
+  margin: 0 auto;    /* Centre le conteneur horizontalement */
+  /* ----------------------------------------- */
+}
+
+.promo-card {
+  position: relative;
+  background: var(--green-mid);
+  background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(184, 149, 42, 0.2);
+  box-shadow: var(--shadow-hover);
+  text-align: center;
+  
+  /* --- AJOUT ICI POUR LA CARTE --- */
+  width: 100%;       /* Prend toute la largeur de son conteneur .promo-container de 800px */
+}
+
+/* Badge flottant en haut */
+.promo-badge {
+  position: absolute;
+  top: 15px;
+  background: var(--gold);
+  color: var(--green-deep);
+  padding: 5px 15px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 10px rgba(184, 149, 42, 0.4);
+}
+
+.promo-content {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  z-index: 2;
+}
+
+.promo-icon {
+  font-size: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(184, 149, 42, 0.1);
+}
+
+/* Animation de l'emoji */
+.pulse-emoji {
+  display: inline-block;
+  animation: heartBeat 2s infinite;
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.3); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.3); }
+  70% { transform: scale(1); }
+}
+
+.promo-text h2 {
+  font-family: 'Syne', sans-serif;
+  color: var(--white);
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.promo-text h2 span {
+  color: var(--gold);
+  display: block; /* Met le prix en évidence sur une ligne */
+  font-size: 32px;
+  text-shadow: 0 0 15px rgba(184, 149, 42, 0.3);
+}
+
+.promo-text p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Lueur décorative en arrière-plan */
+.promo-bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(184, 149, 42, 0.08) 0%, transparent 60%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .promo-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .promo-text h2 {
+    font-size: 22px;
+  }
+  .promo-text h2 span {
+    font-size: 26px;
+  }
+}
 body {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: var(--cream);
-  color: var(--text-dark);
+  color: var(--text-on-light);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
+/* Animation d'entrée pour toute la page */
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.home {
+  width: 100vw !important;      /* Prend 100% de la largeur de la fenêtre */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important; /* Annule tout centrage du parent */
+  margin-right: -50vw !important;
+  padding: 0 !important;
+  max-width: none !important;
+  overflow-x: hidden;           /* Sécurité pour éviter le scroll horizontal */
+}
+
+.hero-modern {
+  position: relative;
+  width: 100%; /* S'assure de prendre toute la largeur du parent .home */
+  min-height: 65vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 1000px;
+  padding: 80px 20px 120px 20px; 
+  overflow: hidden;
+  margin-top: -200px;
+  background: linear-gradient(135deg, var(--green-deep) 0%, #1a351a 100%) !important;
+
+}
+
+.hero-modern::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(184, 149, 42, 0.05) 0%, transparent 50%);
+  z-index: 1; 
+  pointer-events: none;
+}
+
+@keyframes moveLight {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.hero-content {
+  z-index: 5;
+  max-width: 800px;
+}
+
+/* Badge au dessus du titre */
+.badge-new {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  
+}
+
+/* Titre avec animation de texte */
+.hero-title-animated {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.hero-title-animated span {
+  display: block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards 0.3s;
+}
+
+.hero-title-animated .gold-text {
+  color: var(--gold);
+  animation-delay: 0.5s;
+}
+
+.hero-subtitle {
+  color: rgba(255,255,255,0.7);
+  font-size: 18px;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.7s;
+}
+
+/* Bouton avec effet de brillance */
+.btn-primary-shiny {
+  background: var(--gold);
+  color: var(--green-deep);
+  padding: 18px 45px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.9s;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary-shiny:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary-shiny::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: rgba(255,255,255,0.4);
+  transform: rotate(30deg);
+  transition: 0.5s;
+}
+
+.btn-primary-shiny:hover::after {
+  left: 120%;
+}
+
+.wave-container {
+  position: absolute;
+  bottom: -1px; /* Pour éviter un micro-espace blanc */
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 2;
+}
+
+.wave-container svg {
+  width: 100%; /* Force le SVG à s'étirer sur toute la largeur */
+  height: auto;
+}
+/* Animations Keyframes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ===== HERO SECTION (Unique & Animée) ===== */
+.hero {
+  background-color: var(--green-deep);
+  background-image: 
+    linear-gradient(135deg, rgba(15, 31, 15, 0.95) 0%, rgba(26, 46, 26, 0.9) 100%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8952a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2v-4h4v-2H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  /* Motif SVG subtil couleur Or */
+  
+  padding: 100px 60px; /* Plus d'espace */
+  text-align: center;
+  margin-bottom: 60px;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(184, 149, 42, 0.1);
+  box-shadow: var(--shadow-card);
+}
+
+/* Effet de lueur animée en arrière-plan */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(184, 149, 42, 0.15) 0%, transparent 40%);
+  animation: rotateGlow 10s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 64px; /* Très grand pour le style trendy */
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.03em; /* Lettres resserrées, très moderne */
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  /* Petit dégradé subtil sur le texte */
+  background: linear-gradient(180deg, #FFFFFF 0%, #E0E0E0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 18px;
+  color: rgba(251, 249, 246, 0.7);
+  letter-spacing: 0.02em;
+  margin-bottom: 48px;
+  font-weight: 300;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Bouton Primary Style "Trendy Phosphorescent" */
+.btn-primary {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  display: inline-block;
+  padding: 18px 44px;
+  background-color: var(--gold);
+  color: var(--green-deep);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  transition: var(--transition-md);
+  box-shadow: 0 4px 15px rgba(184, 149, 42, 0.3);
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  background-color: var(--gold-light);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(184, 149, 42, 0.5);
+}
+
+/* Effet de brillance au survol */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.5s;
+}
+
+.btn-primary:hover::after {
+  left: 100%;
+}
+
+/* ===== CATEGORIES GRID (Cartes Uniques & Intéraction) ===== */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+  padding: 0 10px;
+}
+
+/* Style des cartes (.btn-two) */
+.btn-two {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: var(--transition-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+}
+
+/* Fond décoratif subtil au survol */
+.btn-two::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--gold-pale);
+  scale: 0;
+  opacity: 0;
+  border-radius: 50%;
+  transition: var(--transition-md);
+  z-index: 1;
+}
+
+.btn-two:hover {
+  transform: translateY(-8px);
+  border-color: rgba(184, 149, 42, 0.2);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-two:hover::before {
+  scale: 2;
+  opacity: 1;
+  border-radius: var(--radius-md);
+}
+
+/* Conteneur de l'image (.btn-tree) */
+.btn-tree {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  background-color: var(--cream);
+  border-radius: 50%;
+  padding: 15px;
+  transition: var(--transition-md);
+  border: 1px solid rgba(0,0,0,0.02);
+}
+
+.btn-two:hover .btn-tree {
+  background-color: var(--white);
+  box-shadow: var(--shadow-card);
+  transform: scale(1.05);
+}
+
+.btn-tree img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* Filtre pour donner un look unifié trendy (optionnel) */
+  /* filter: grayscale(100%) brightness(0.8); */
+  transition: var(--transition-md);
+}
+
+.btn-two:hover .btn-tree img {
+  filter: grayscale(0%) brightness(1);
+}
+
+/* Texte de la catégorie */
+.btn-two p {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize; /* Plus moderne que tout en majuscule */
+  font-weight: 600;
+  color: var(--green-deep);
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+  transition: var(--transition-fast);
+}
+
+.btn-two:hover p {
+  color: var(--gold);
+}
+
+
+/* ===== RESPONSIVE OPTIMIZATION ===== */
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 48px; }
+  .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+@media (max-width: 768px) {
+  .home { padding: 10px; }
+  .hero { padding: 60px 30px; margin-bottom: 40px; }
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 16px; margin-bottom: 32px; }
+  
+  .categories-grid { gap: 15px; }
+  .btn-two { padding: 30px 15px; }
+  .btn-tree { width: 90px; height: 90px; }
+  
+  .home3 {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  .home3 h2 { font-size: 22px; }
+}
 button { cursor: pointer; border: none; font-family: inherit; }
 
 /* ===== NAVBAR ===== */
@@ -36,7 +740,6 @@ button { cursor: pointer; border: none; font-family: inherit; }
   padding: 0 32px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 64px;
   position: sticky;
   top: 0;
@@ -92,7 +795,6 @@ button { cursor: pointer; border: none; font-family: inherit; }
   padding: 7px 16px;
   border-radius: var(--radius-pill);
   letter-spacing: 0.04em;
-  transition: all 0.2s;
 }
 
 .btnnav:hover { color: var(--gold); border-color: rgba(184,149,42,0.4); }

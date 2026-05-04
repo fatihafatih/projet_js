@@ -41,6 +41,41 @@
       "email": "siham@gmail.com",
       "motDePasse": "123",
       "avatar": "SI"
+    },
+    {
+      "id": 7,
+      "nom": "hanane",
+      "email": "hanane@gmail.com",
+      "motDePasse": "abcd",
+      "avatar": "IN"
+    },
+    {
+      "id": 8,
+      "nom": "ikram",
+      "email": "ikram@gmail.com",
+      "motDePasse": "1234",
+      "avatar": "IN"
+    },
+    {
+      "id": 9,
+      "nom": "fatiha",
+      "email": "fatiha@gmail.com",
+      "motDePasse": "abcd",
+      "avatar": "IN"
+    },
+    {
+      "id": 10,
+      "nom": "ali",
+      "email": "Ali@example.com",
+      "motDePasse": "1234",
+      "avatar": "IN"
+    },
+    {
+      "id": 11,
+      "nom": "hiba",
+      "email": "hiba@gmail.com",
+      "motDePasse": "hiba",
+      "avatar": "IN"
     }
   ]
 }
