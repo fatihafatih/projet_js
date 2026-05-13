@@ -71,7 +71,7 @@ function Home({ setPage }) {
           <div className="about-container">
             <div className="about-visual">
               <div className="image-wrapper main-img">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Atelier" />
+                <img src="fabrique.jpg" alt="Atelier" />
               </div>
               <div className="image-wrapper detail-img">
                 <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80" alt="Détail" />
