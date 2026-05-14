@@ -19,7 +19,7 @@ function ProductDetail({ produit, setPage , ajouterAuPanier }) {
 
     ajouterAuPanier(produit, tailleActive);
 
-    setMessage("✅Ajouté au panier !");
+    setMessage("Ajouté au panier !");
     setTimeout(() => setMessage(null), 2000);
 
   }
@@ -54,7 +54,7 @@ function ProductDetail({ produit, setPage , ajouterAuPanier }) {
               ))}
             </div>
 
-            {erreurTaille && (<p className="erreur-taille">⚠️ Veuillez choisir une taille</p>)}
+            {erreurTaille && (<p className="erreur-taille">Veuillez choisir une taille</p>)}
 
             {message && <p className="message-info">{message}</p>}
             <button className="btn-panier" onClick={verifier}>  Ajouter au panier </button>

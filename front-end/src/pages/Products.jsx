@@ -30,24 +30,15 @@ function Products({ setPage, setProduitSelectionne }) {
     }
   }
 
-
-
-
   // Filtrer les produits selon catégorie et recherche
   const produitsFiltres = produits.filter((p) => {
-    
     const matchCategorie = categorieActive === "Tous" || p.categorie === categorieActive;
     const matchRecherche = p.nom.toLowerCase().includes(recherche.toLowerCase());
     return matchCategorie && matchRecherche;
   });
 
-
-
   if (chargement) return <Loading message="Chargement des produits..." />;
   if (erreur) return <div className="erreur">{erreur}</div>;
-
-
-
 
 
   return (

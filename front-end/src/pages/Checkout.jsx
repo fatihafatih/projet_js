@@ -35,7 +35,7 @@ function Checkout({ panier, total, viderPanier, setPage, utilisateur/*, ajouterC
 
 async function soumettreCommande() {
     if (!validerForm()) {
-      setErreur("⚠️ Veuillez remplir tous les champs.");
+      setErreur("Veuillez remplir tous les champs.");
       return;
     }
  setErreur(null);
@@ -67,7 +67,6 @@ try {
     return (
       <div className="confirmation">
         <div className="confirmation-box">
-          <p className="confirmation-icon">✅</p>
           <h2>Commande confirmée !</h2>
           <p>Numéro : <strong>{confirmation.numeroCommande}</strong></p>
           <p>Un email de confirmation a été envoyé à {form.email}</p>

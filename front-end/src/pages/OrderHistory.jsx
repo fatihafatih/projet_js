@@ -15,8 +15,7 @@ function OrderHistory({  setPage ,utilisateur}) {
       try{
            const res = await fetch(`http://localhost:3000/orders?email=${utilisateur.email}`);
            const data = await res.json();
-            sethistorique(data); 
-
+            sethistorique(data);
          } catch (err) {
           setErreur("Erreur lors du chargement des commandes.");
         } finally {

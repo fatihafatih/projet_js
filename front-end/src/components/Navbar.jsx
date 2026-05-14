@@ -51,7 +51,7 @@ function Navbar({ page, setPage, nbArticles, utilisateur, deconnecter }) {
                                 <button className="element-menu"
                                     onClick={() => allerVers("historique")}
                                 >
-                                    📦 Mes commandes
+                                    Mes commandes
 
                                 </button>
                                 <div className="separateur" />
@@ -61,14 +61,14 @@ function Navbar({ page, setPage, nbArticles, utilisateur, deconnecter }) {
                                         fermerMenu();
                                     }}
                                 >
-                                    🚪 Déconnexion
+                                    Déconnexion
                                 </button>
                             </div>
                         )}
                 </div>
             ) : (
                 <button className="btnnav" onClick={() => setPage("login")}>
-                    👤 Connexion
+                    Connexion
 
                 </button>
             )}

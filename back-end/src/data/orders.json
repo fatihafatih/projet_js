@@ -487,5 +487,56 @@
       }
     ],
     "total": 45.99
+  },
+  {
+    "numeroCommande": "CMD-26458",
+    "date": "14/05/2026",
+    "client": {
+      "nom": "siham",
+      "email": "siham@gmail.com",
+      "adresse": "hay al boughaz n48 tanger",
+      "ville": "Tanger",
+      "codePostal": "999",
+      "carte": "345367"
+    },
+    "articles": [
+      {
+        "id": 2,
+        "nom": "Jean Slim Bleu",
+        "prix": 69.99,
+        "categorie": "Pantalons",
+        "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400",
+        "description": "Jean slim en denim stretch. Confortable et tendance, parfait pour le quotidien.",
+        "tailles": [
+          "36",
+          "38",
+          "40",
+          "42",
+          "44"
+        ],
+        "note": 4.7,
+        "taille": "42",
+        "quantite": 1
+      },
+      {
+        "id": 5,
+        "nom": "Hoodie Gris Urban",
+        "prix": 55,
+        "categorie": "Sweats",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuQv1wRkUW-rGc2G5BnB4cAhXr0HmY712BuQ&s",
+        "description": "Sweat à capuche oversize en molleton doux. Poche kangourou, cordon réglable.",
+        "tailles": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "note": 4.4,
+        "taille": "S",
+        "quantite": 2
+      }
+    ],
+    "total": 179.99
   }
 ]

@@ -6,7 +6,7 @@ import { join } from 'path';
 export class OrdersService {
 private filePath = join(process.cwd(), 'src', 'data', 'orders.json');
   async create(order: any) {
-    const orders = await this.findAll();
+    const orders = await this.findAll(); 
 
     const newOrder = {
       numeroCommande: "CMD-" + Math.floor(Math.random() * 100000),

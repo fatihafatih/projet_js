@@ -1,69 +1,69 @@
 import { useState } from "react";
-function useCart(){
-const [panier,setPanier]=useState([]);
+function useCart() {
+    const [panier, setPanier] = useState([]);
 
 
-function ajouterAuPanier(produit,taille){
-setPanier((prev)=>{
+    function ajouterAuPanier(produit, taille) {
+        setPanier((prev) => {
 
-    const existeDeja=prev.find(
-    (item)=>item.id === produit.id && item.taille ===taille
-);
-if( existeDeja){
-    return prev.map((item)=>
-    item.id === produit.id && item.taille ===taille
-    ? { ...item,quantite:item.quantite+1}
-    :item
-    );
-}
-return [...prev,{...produit,taille,quantite:1}]
-}
-);
-}
-
-
-function  supprimerDuPanier(id,taille){
-    setPanier((prev)=>
-    prev.filter((item)=>!(item.id===id && item.taille===taille))
-);
-}
-
-
-function modifierQuantite(id,taille,quantite){
-    if(quantite<=0){
-        supprimerDuPanier(id,taille);
-        return;
+            const existeDeja = prev.find(
+                (item) => item.id === produit.id && item.taille === taille
+            );
+            if (existeDeja) {
+                return prev.map((item) =>
+                    item.id === produit.id && item.taille === taille
+                        ? { ...item, quantite: item.quantite + 1 }
+                        : item
+                );
+            }
+            return [...prev, { ...produit, taille, quantite: 1 }]
+        }
+        );
     }
 
-  setPanier((prev)=>
-    prev.map((item)=>item.id===id && item.taille===taille ?{...item,quantite}:item
-    )
-)
 
-}
-function viderPanier(){
-    setPanier([])
-}
+    function supprimerDuPanier(id, taille) {
+        setPanier((prev) =>
+            prev.filter((item) => !(item.id === id && item.taille === taille))
+        );
+    }
 
 
+    function modifierQuantite(id, taille, quantite) {
+        if (quantite <= 0) {
+            supprimerDuPanier(id, taille);
+            return;
+        }
 
-//acc:accumulateur :resultat qui s'ajoute a chaque tour
-//item :element du panier
+        setPanier((prev) =>
+            prev.map((item) => item.id === id && item.taille === taille ? { ...item, quantite } : item
+            )
+        )
+
+    }
+    function viderPanier() {
+        setPanier([])
+    }
 
 
-const total=panier.reduce((acc,item)=>acc+item.prix*item.quantite,0);
 
-const nbArticles=panier.reduce((acc,item)=>acc+item.quantite,0);
- 
-return {
-  panier,
-  ajouterAuPanier,
-  supprimerDuPanier,
-  modifierQuantite,
-  viderPanier,
-  total,
-  nbArticles
- };
+    //acc:accumulateur :resultat qui s'ajoute a chaque tour
+    //item :element du panier
+
+
+    const total = panier.reduce((acc, item) => acc + item.prix * item.quantite, 0);
+
+    const nbArticles = panier.reduce((acc, item) => acc + item.quantite, 0);
+
+    return {
+        panier,
+        ajouterAuPanier,
+        supprimerDuPanier,
+        modifierQuantite,
+        viderPanier,
+        total,
+        nbArticles
+    };
 
 }
 export default useCart;
