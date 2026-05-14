@@ -22,32 +22,11 @@ function App() {
     modifierQuantite, viderPanier, total, nbArticles,
   } = useCart();
 
-  // function ajouterCommande(commande) {
-  //   setHistorique((prev) => [...prev, commande]);
-  // }
-
-  // function deconnecter() {
-  //   setUtilisateur(null);
-  //   viderPanier();
-  //   setPage("accueil");
-  // }
-
-  // function allerAuPanier() {
-  //   if (!utilisateur) {
-  //     setPage("login");
-  //   } else {
-  //     setPage("panier");
-  //   }
-  // }
+ 
   function allerAuPanier() {
   setPage("panier");
 }
-// useEffect(() => {
-//   if (utilisateur?.email) {
-//     const data = localStorage.getItem(`orders-${utilisateur.email}`);
-//     if (data) setHistorique(JSON.parse(data));
-//   }
-// }, [utilisateur]);
+
 useEffect(() => {
   async function fetchOrders() {
     if (utilisateur?.email) {
@@ -61,18 +40,17 @@ useEffect(() => {
 
   fetchOrders();
 }, [utilisateur]);
+
+
+
 function ajouterCommande(commande) {
   const newHistorique = [...historique, commande];
 
   setHistorique(newHistorique);
 
-  if (utilisateur) {
-    localStorage.setItem(
-      `orders-${utilisateur.email}`,
-      JSON.stringify(newHistorique)
-    );
-  }
 }
+
+
 function deconnecter() {
   setUtilisateur(null);
   viderPanier();
@@ -145,7 +123,7 @@ function deconnecter() {
     <div className="app">
       <Navbar
         page={page}
-setPage={setPage}
+        setPage={setPage}
         nbArticles={nbArticles}
         utilisateur={utilisateur}
         deconnecter={deconnecter}

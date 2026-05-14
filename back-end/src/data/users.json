@@ -76,6 +76,27 @@
       "email": "hiba@gmail.com",
       "motDePasse": "hiba",
       "avatar": "IN"
+    },
+    {
+      "id": 12,
+      "nom": "test",
+      "email": "sihaum@gmail.com",
+      "motDePasse": "123T",
+      "avatar": "IN"
+    },
+    {
+      "id": 13,
+      "nom": "sanae",
+      "email": "sanae@gmail.com",
+      "motDePasse": "1234",
+      "avatar": "IN"
+    },
+    {
+      "id": 14,
+      "nom": "karim",
+      "email": "karim@gmail.com",
+      "motDePasse": "1234",
+      "avatar": "IN"
     }
   ]
 }

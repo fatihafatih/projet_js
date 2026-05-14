@@ -1,11 +1,14 @@
 import { useState } from "react";
+
 function ProductDetail({ produit, setPage, utilisateur, ajouterAuPanier }) {
+
+
   const [tailleActive, setTailleActive] = useState(null);
   const [erreurTaille, setErreurTaille] = useState(false);
   const [message, setMessage] = useState(null);
 
   if (!produit) return <p>Produit non trouvé</p>;
-
+     
   function verifier() {
     if (!tailleActive) {
       setErreurTaille(true);
@@ -16,8 +19,9 @@ function ProductDetail({ produit, setPage, utilisateur, ajouterAuPanier }) {
 
     ajouterAuPanier(produit, tailleActive);
 
-    setMessage("✅ Ajouté au panier !");
+    setMessage("✅Ajouté au panier !");
     setTimeout(() => setMessage(null), 2000);
+
   }
   return (
     <div className="pageDetail">
@@ -33,7 +37,7 @@ function ProductDetail({ produit, setPage, utilisateur, ajouterAuPanier }) {
           </div>
           <div>
             <p className="prix">{produit.prix} Dhs</p>
-
+            
             <p className="tailles">Tailles disponibles</p>
             <div className="listTailles">
               {produit.tailles?.map((t) => (

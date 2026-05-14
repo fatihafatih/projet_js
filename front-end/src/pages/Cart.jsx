@@ -1,4 +1,5 @@
 function Cart({panier,setPage,supprimerDuPanier,modifierQuantite , total,utilisateur}){
+
 if(panier.length===0){
     return(
         <>
@@ -12,6 +13,7 @@ if(panier.length===0){
         </>
     );
 }
+
 return(
     <>
     <div  className="cart1">
@@ -20,13 +22,13 @@ return(
             <div className="cartitems">
                 {panier.map((item)=>(
                     <div key={`${item.id}-${item.taille}`} className="cartitem" >
-
                         <img src={item.image} alt={item.nom}  className="itemimage" />
                         <div className="iteminfos">
                             <h3>{item.nom}</h3>
                             <p className="itemtaille">Taille:{item.taille}</p>
                             <p className="itemprix">{item.prix.toFixed(2)}DH</p>
                         </div>
+
                         <div className="itemquantite">
                             <button onClick={()=>modifierQuantite(item.id,item.taille,item.quantite-1)}>
                                 -
@@ -58,13 +60,12 @@ return(
             </div>
             <div className="resumeligne">
                 <span>Livraison</span>
-                <span>{total>=50?"Gratuite 🎉" : "4.99 DH"}</span>
+                <span>{total>=50?"Gratuite " : "4.99 DH"}</span>
 
             </div>
               <div className="resumelignetotalfinal">
                 <span>Total</span>
                 <span>{(total>=50?total:total+4.99).toFixed(2)}DH</span>
-
             </div>
  <button className="btn1" onClick={() => {
   if (!utilisateur) {

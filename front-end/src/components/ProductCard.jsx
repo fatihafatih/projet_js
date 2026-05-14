@@ -1,4 +1,5 @@
 // Composant carte produit - reçoit : produit, setPage, setProduitSelectionne
+
 function ProductCard({ produit, setPage, setProduitSelectionne }) {
   function ouvrirDetail() {
     setProduitSelectionne(produit);

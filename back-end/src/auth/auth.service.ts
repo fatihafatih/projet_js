@@ -5,7 +5,6 @@ import * as path from 'path';
 @Injectable()
 export class AuthService {
     private filePath = path.join(process.cwd(), 'src/data', 'users.json');
-    private users: any = [];
 
     async register(username: string, email: string, password: string) {
         let data;

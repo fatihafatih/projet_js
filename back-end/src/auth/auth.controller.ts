@@ -9,15 +9,15 @@ export class AuthController {
 
     //endpoint: http://localhost:3000/auth/register
     @Post('register')
-    async register(
-        @Body() body: { username: string; email: string; password: string }): Promise<any> {
+    async register( @Body() body: { username: string; email: string; password: string }): Promise<any> 
+    {
         const { email, password, username } = body;
         return await this.AuthService.register(username, email, password);
     }
 
     @Post('login')
-    async login(
-        @Body() body: { email: string; password: string }): Promise<any> {
+    async login( @Body() body: { email: string; password: string }): Promise<any> 
+    {
         const { email, password } = body;
         return await this.AuthService.login(email, password);
     }

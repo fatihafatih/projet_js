@@ -2,7 +2,7 @@ import { useState } from "react";
 import Loading from "../components/Loading";
 
 function Login({ setUtilisateur, setPage }) {
-    const [onglet, setOnglet] = useState("connexion"); // "connexion" ou "inscription"
+    const [onglet, setOnglet] = useState("connexion"); 
     const [email, setEmail] = useState("");
     const [motDePasse, setMotDePasse] = useState("");
 
@@ -78,7 +78,7 @@ function Login({ setUtilisateur, setPage }) {
         if (data.message) {
             setSucces("Compte créé avec succès !");
             setTimeout(() => {
-            setPage("login");
+            changerOnglet("connexion")
             }, 2000);
         } else {
             setErreur("Erreur lors de l'inscription");
@@ -142,12 +142,8 @@ function Login({ setUtilisateur, setPage }) {
                             Se connecter
                         </button>
 
-                        <p className="login-hint">
-                            Compte test : <strong>israe@test.com</strong> / <strong>123</strong>
-                        </p>
                     </div>
                 )}
-
                 {onglet === "inscription" && (
                     <div className="login-form">
                         <label>Nom complet</label>
