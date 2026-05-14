@@ -60,12 +60,12 @@ return(
             </div>
             <div className="resumeligne">
                 <span>Livraison</span>
-                <span>{total>=50?"Gratuite " : "4.99 DH"}</span>
+                <span>{total>=50?"Gratuite " : "25 DH"}</span>
 
             </div>
               <div className="resumelignetotalfinal">
                 <span>Total</span>
-                <span>{(total>=50?total:total+4.99).toFixed(2)}DH</span>
+                <span>{(total>=50?total:total+25).toFixed(2)}DH</span>
             </div>
  <button className="btn1" onClick={() => {
   if (!utilisateur) {
