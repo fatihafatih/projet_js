@@ -8,11 +8,10 @@ export class ProductsService {
   }
 
   findOne(id: number) {
-const product = data.PRODUCTS.find(p => p.id === Number(id));
+  const product = data.PRODUCTS.find(p => p.id === Number(id));
     if (!product) {
       throw new NotFoundException("Produit introuvable");
     }
-
     return product;
   }
 }

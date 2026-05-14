@@ -3,15 +3,16 @@ import { envoyerCommande } from "../data/products";
 import Loading from "../components/Loading";
 
 // Page commande/checkout - reçoit aussi l'utilisateur connecté
-function Checkout({ panier, total, viderPanier, setPage, utilisateur, ajouterCommande }) {
+function Checkout({ panier, total, viderPanier, setPage, utilisateur/*, ajouterCommande */}) {
   const [form, setForm] = useState({
-    nom: utilisateur?.nom || "",
-    email: utilisateur?.email || "",
+    nom: utilisateur.nom ,
+    email: utilisateur.email,
     adresse: "",
     ville: "",
     codePostal: "",
     carte: "",
   });
+
   const [envoi, setEnvoi] = useState(false);
   const [confirmation, setConfirmation] = useState(null);
   const [erreur, setErreur] = useState(null);
@@ -31,6 +32,7 @@ function Checkout({ panier, total, viderPanier, setPage, utilisateur, ajouterCom
     return true;
   }
 
+
 async function soumettreCommande() {
     if (!validerForm()) {
       setErreur("⚠️ Veuillez remplir tous les champs.");
@@ -41,16 +43,16 @@ async function soumettreCommande() {
 try {
   setEnvoi(true);
     const commande = { client: form, articles: panier, total };
-    const resultat = await envoyerCommande(commande);
+    const resultat = await envoyerCommande(commande); 
 
- ajouterCommande({
+ /*ajouterCommande({
      numeroCommande: resultat.numeroCommande,
      date: new Date().toLocaleDateString("fr-FR", { day: "2-digit", month: "long", year: "numeric" }),
      articles: [...panier],
      total,
      client: form,
       });
-
+*/
   setConfirmation(resultat);
   viderPanier();
     } catch (err) {

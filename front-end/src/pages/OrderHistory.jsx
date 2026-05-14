@@ -1,4 +1,29 @@
-function OrderHistory({ historique, setPage }) {
+import { useState, useEffect } from "react";
+import Loading from "../components/Loading";
+
+function OrderHistory({  setPage ,utilisateur}) {
+
+ const [historique, sethistorique] = useState([]);
+  const [chargement, setChargement] = useState(true);
+  const [erreur, setErreur] = useState(null);
+      // Charger les produits au montage du composant
+      useEffect(() => {
+        chargerhistorique();
+      }, []);
+    
+      async function chargerhistorique() {
+      try{
+           const res = await fetch(`http://localhost:3000/orders?email=${utilisateur.email}`);
+           const data = await res.json();
+            sethistorique(data); 
+
+         } catch (err) {
+          setErreur("Erreur lors du chargement des commandes.");
+        } finally {
+          setChargement(false);
+        }
+      }
+
     if (historique.length === 0) {
         return (
             <div className="aucune-commande">

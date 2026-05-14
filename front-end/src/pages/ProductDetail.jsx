@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ProductDetail({ produit, setPage, utilisateur, ajouterAuPanier }) {
+function ProductDetail({ produit, setPage , ajouterAuPanier }) {
 
 
   const [tailleActive, setTailleActive] = useState(null);

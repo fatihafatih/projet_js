@@ -27,7 +27,7 @@ function App() {
   setPage("panier");
 }
 
-useEffect(() => {
+/*useEffect(() => {
   async function fetchOrders() {
     if (utilisateur?.email) {
       const res = await fetch(
@@ -40,16 +40,16 @@ useEffect(() => {
 
   fetchOrders();
 }, [utilisateur]);
+*/
 
-
-
+/*
 function ajouterCommande(commande) {
   const newHistorique = [...historique, commande];
-
   setHistorique(newHistorique);
 
-}
 
+}
+*/
 
 function deconnecter() {
   setUtilisateur(null);
@@ -76,7 +76,6 @@ function deconnecter() {
             produit={produitSelectionne}
             ajouterAuPanier={ajouterAuPanier}
             setPage={setPage}
-            utilisateur={utilisateur}
           />
         );
 
@@ -104,7 +103,7 @@ function deconnecter() {
             viderPanier={viderPanier}
             setPage={setPage}
             utilisateur={utilisateur}
-            ajouterCommande={ajouterCommande}
+            /*ajouterCommande={ajouterCommande}*/
           />
         );
 
@@ -112,7 +111,7 @@ function deconnecter() {
   if (!utilisateur) {
     return <Login setUtilisateur={setUtilisateur} setPage={setPage} />;
   }
-        return <OrderHistory historique={historique} setPage={setPage} />;
+        return <OrderHistory utilisateur={utilisateur}setPage={setPage} />;
 
       default:
         return <Home setPage={setPage} />;
