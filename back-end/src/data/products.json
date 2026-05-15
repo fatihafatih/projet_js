@@ -3,15 +3,14 @@
 "PRODUCTS":[
   {
     "id": 1,
-    "nom": "T-shirt Blanc Classic",
-    "prix": 29.99,
-    "categorie": "T-shirts",
-    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
-    "description": "Un t-shirt blanc intemporel en coton 100%. Coupe regular fit, idéal pour toutes les occasions.",
-    "tailles": ["XS", "S", "M", "L", "XL"],
-    "note": 4.5
-  },
-  
+  "nom": "Robe Élégante Fluide",
+  "prix": 64.99,
+  "categorie": "Robes",
+  "image": "https://images.unsplash.com/photo-1713358642508-e237625a4ee7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "description": "Robe fluide moderne et élégante, idéale pour un look chic et féminin au quotidien ou pour des occasions spéciales.",
+  "tailles": ["XS", "S", "M", "L"],
+  "note": 4.6
+},  
   {
     "id": 2,
     "nom": "Jean Slim Bleu",
@@ -32,8 +31,40 @@
     "tailles": ["S", "M", "L", "XL"],
     "note": 4.8
   },
+    
   {
     "id": 4,
+    "nom": "Veste Streetwear Moderne",
+    "prix": 59.99,
+    "categorie": "Vestes",
+    "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "description": "Veste moderne au style streetwear, parfaite pour un look urbain et confortable.",
+    "tailles": ["S", "M", "L", "XL"],
+    "note": 4.5
+  },
+  {
+    "id": 5,
+    "nom": "Veste Premium Casual",
+    "prix": 74.99,
+    "categorie": "Vestes",
+    "image": "https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "description": "Veste élégante et confortable, idéale pour un style casual chic au quotidien.",
+    "tailles": ["S", "M", "L", "XL"],
+    "note": 4.6
+  },
+  {
+    "id": 6,
+    "nom": "Chemise Élégante Classique",
+    "prix": 39.99,
+    "categorie": "Chemises",
+    "image": "https://plus.unsplash.com/premium_photo-1683140435505-afb6f1738d11?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "description": "Chemise élégante et classique, parfaite pour les occasions formelles ou professionnelles.",
+    "tailles": ["S", "M", "L", "XL"],
+    "note": 4.4
+  },
+
+  {
+    "id": 7,
     "nom": "Robe Fleurie Été",
     "prix": 45.99,
     "categorie": "Robes",
@@ -43,17 +74,17 @@
     "note": 4.6
   },
   {
-    "id": 5,
-    "nom": "Hoodie Gris Urban",
-    "prix": 55,
+    "id": 8,
+    "nom": "Hoodie Blanc Minimaliste",
+    "prix": 100,
     "categorie": "Sweats",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuQv1wRkUW-rGc2G5BnB4cAhXr0HmY712BuQ&s",
-    "description": "Sweat à capuche oversize en molleton doux. Poche kangourou, cordon réglable.",
+    "image": "https://images.unsplash.com/photo-1738486260184-5b091fd0e90b?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Un hoodie blanc simple et moderne dans un environnement urbain ensoleillé. Le style est décontracté, élégant et parfait pour un look streetwear minimaliste",
     "tailles": ["S", "M", "L", "XL", "XXL"],
     "note": 4.4
   },
   {
-    "id": 6,
+    "id": 9,
     "nom": "Chemise Oxford Bleue",
     "prix": 49.99,
     "categorie": "Chemises",
@@ -63,24 +94,44 @@
     "note": 4.3
   },
   {
-    "id": 7,
-    "nom": "Short Cargo Kaki",
-    "prix": 39.99,
-    "categorie": "Pantalons",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQHnXgLVnFps9_FZucZ3D0kZWh3cPD-V0_Yw&s",
-    "description": "Short cargo multi-poches en coton résistant. Élastique à la taille, ceinture incluse.",
-    "tailles": ["S", "M", "L", "XL"],
-    "note": 4.2
+    "id": 10,
+  "nom": "Pantalon Cargo Moderne",
+  "prix": 200.0,
+  "categorie": "Pantalons",
+  "image": "https://plus.unsplash.com/premium_photo-1769105242805-1f0ee8399b31?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "description": "Pantalon cargo moderne et confortable, parfait pour un style streetwear tendance.",
+  "tailles": ["S", "M", "L", "XL"],
+  "note": 4.4
   },
   {
-    "id": 8,
-    "nom": "Manteau Long Camel",
-    "prix": 189.99,
-    "categorie": "Manteaux",
-    "image": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400",
-    "description": "Manteau long élégant en laine mélangée. Double boutonnage, col revers.",
-    "tailles": ["S", "M", "L", "XL"],
-    "note": 4.9
-  }
+"id": 11,
+"nom": "Manteau Long Camel",
+"prix": 189.99,
+"categorie": "Manteaux",
+"image": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400",
+"description": "Manteau long élégant en laine mélangée. Double boutonnage, col revers.",
+"tailles": ["S", "M", "L", "XL"],
+"note": 4.9
+  },
+ {
+    "id": 12,
+"nom": "T-shirt Blanc Classic",
+"prix": 29.99,
+"categorie": "T-shirts",
+"image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
+"description": "Un t-shirt blanc intemporel en coton 100%. Coupe regular fit, idéal pour toutes les occasions.",
+"tailles": ["XS", "S", "M", "L", "XL"],
+"note": 4.5
+  },
+  {
+  "id": 13,
+  "nom": "Manteau Long Streetwear Beige",
+  "prix": 500.99,
+  "categorie": "Manteaux",
+  "image": "https://images.unsplash.com/photo-1740813003475-2b66acf1bc82?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+  "description": "Manteau long moderne de style streetwear avec coupe ample et design minimaliste. Idéal pour un look élégant et décontracté en hiver.",
+  "tailles": ["S", "M", "L", "XL"],
+  "note": 4.5
+}
 ]
 }
