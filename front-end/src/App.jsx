@@ -15,7 +15,6 @@ function App() {
   const [page, setPage] = useState("accueil");
   const [produitSelectionne, setProduitSelectionne] = useState(null);
   const [utilisateur, setUtilisateur] = useState(null);
-  const [historique, setHistorique] = useState([]);
 
   const {
     panier, ajouterAuPanier, supprimerDuPanier,
